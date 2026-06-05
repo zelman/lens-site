@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--
+  Lens — public credibility page (static, single file).
+  Separate surface. Zero PII capture. No link into the live product.
+
+  BEFORE DEPLOY — one required substitution:
+    Replace the contact address "hello@lens.invalid" below (search: CONTACT)
+    with the branded contact alias. The .invalid TLD guarantees the
+    placeholder cannot silently ship as a working address.
+
+  Build stamp lives in the footer and in <meta name="build">. Bump it on every deploy.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lens — An AI associate for retained executive search</title>
+  <meta name="description" content="Structured discovery on both sides of a senior hire — a shared object for better conversations, not a hiring verdict." />
+  <meta name="build" content="2026.06.04-v0.1" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Lens — An AI associate for retained executive search" />
+  <meta property="og:description" content="Structured discovery on both sides of a senior hire — a shared object for better conversations, not a hiring verdict." />
+  <meta property="og:type" content="website" />
+  <!-- Inline SVG favicon (data URI) — keeps the page fully self-contained, no external requests. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFFFFF'/%3E%3Crect x='6' y='6' width='4' height='20' fill='%23D93025'/%3E%3Crect x='6' y='22' width='16' height='4' fill='%231A1A1A'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --ink:       #1A1A1A;
+      --paper:     #FFFFFF;
+      --red:       #D93025;
+      --green:     #2D6A2D;
+      --orange:    #E8590C;
+      --hairline:  #EEEEEE;
+      --panel:     #F0F0F0;
+      --mono:      "SF Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+      --sans:      Arial, Helvetica, "Helvetica Neue", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ---- Hero ------------------------------------------------------- */
+    header.hero {
+      padding: 88px 0 56px;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .wordmark {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 0;          /* do NOT wide-track the Lens wordmark */
+      margin: 0 0 40px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 5.4vw, 46px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin: 0 0 22px;
+      max-width: 18ch;
+    }
+
+    .subhead {
+      font-size: clamp(17px, 2.4vw, 20px);
+      line-height: 1.5;
+      margin: 0;
+      max-width: 52ch;
+      color: var(--ink);
+    }
+
+    /* ---- Sections --------------------------------------------------- */
+    section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin: 0 0 20px;
+    }
+
+    section p {
+      margin: 0 0 16px;
+      max-width: 60ch;
+    }
+    section p:last-child { margin-bottom: 0; }
+
+    /* anti-assessment lead line */
+    .lead {
+      font-size: clamp(20px, 3.2vw, 26px);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin: 0 0 16px;
+      max-width: 22ch;
+    }
+
+    /* ---- Validation strip ------------------------------------------ */
+    .callouts {
+      list-style: none;
+      margin: 8px 0 0;
+      padding: 0;
+      border-top: 1px solid var(--hairline);
+    }
+    .callouts li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--hairline);
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+    }
+    .callouts .tick {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--green);
+      flex: 0 0 auto;
+      line-height: 1.5;
+    }
+    .callouts .role {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    /* ---- Contact ---------------------------------------------------- */
+    .contact { padding: 56px 0 24px; border-bottom: none; }
+
+    .cta {
+      display: inline-block;
+      background: var(--red);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.01em;
+      padding: 15px 28px;
+      border: 0;
+      border-radius: 0;            /* International Style — zero radius */
+    }
+    .cta:hover { background: var(--orange); }
+    .cta:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+
+    .nodata {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--green);
+      margin: 22px 0 0;
+    }
+
+    /* ---- Footer ----------------------------------------------------- */
+    footer {
+      padding: 32px 0 72px;
+      font-size: 13px;
+      color: #555555;
+    }
+    footer .org { margin: 0 0 6px; }
+    footer .build {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: #9A9A9A;
+      margin: 18px 0 0;
+    }
+
+    a { color: var(--red); }
+
+    @media (max-width: 540px) {
+      header.hero { padding: 56px 0 40px; }
+      section { padding: 36px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="hero">
+      <p class="wordmark">Lens</p>
+      <h1>An AI associate for retained executive search.</h1>
+      <p class="subhead">Structured discovery on both sides of a senior hire — a shared object for better conversations, not a hiring verdict.</p>
+    </header>
+
+    <main>
+      <section aria-labelledby="what">
+        <p class="label" id="what">What it is</p>
+        <p>I built Lens as an AI associate for retained search. A recruiter authors a role lens through facilitated intake — the deep version of a kickoff conversation — and Lens reads candidates against it.</p>
+        <p>The result isn't a verdict. It's a shared object: something the recruiter, the client, and the candidate can all point at to make the conversation sharper.</p>
+      </section>
+
+      <section aria-labelledby="diff">
+        <p class="label" id="diff">How it's different</p>
+        <p class="lead">Constructive identity, not a hiring verdict.</p>
+        <p>Most tools screen people out. Lens is built to draw people out — discovery that surfaces who someone is, rather than a score that ranks them.</p>
+      </section>
+
+      <section aria-labelledby="val">
+        <p class="label" id="val">Validation</p>
+        <p>The direction has been validated in direct conversations with senior operators across executive search:</p>
+        <ul class="callouts">
+          <li><span class="tick">[ ✓ ]</span><span class="role">Managing partner, global retained search firm</span></li>
+          <li><span class="tick">[ ✓ ]</span><span class="role">PE operating partner</span></li>
+          <li><span class="tick">[ ✓ ]</span><span class="role">Executive coach, ICF-credentialed</span></li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="vision">
+        <p class="label" id="vision">Vision</p>
+        <p>Beyond any single search, I'm building toward a portable layer of professional identity — something a person owns and carries with them, not a profile a platform rents.</p>
+      </section>
+
+      <section class="contact" aria-labelledby="contact">
+        <p class="label" id="contact">Contact</p>
+        <!-- CONTACT: replace hello@lens.invalid with the branded alias before deploy. -->
+        <a class="cta" href="mailto:hello@lens.invalid?subject=Lens%20%E2%80%94%20request%20access">Request access</a>
+        <p class="nodata">This site collects no personal data.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p class="org">Zelman Labs LLC · Providence, RI</p>
+      <p class="build">BUILD 2026.06.04-v0.1</p>
+    </footer>
+
+  </div>
+</body>
+</html>

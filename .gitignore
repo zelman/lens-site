@@ -1,0 +1,13 @@
+# OS
+.DS_Store
+
+# Vercel
+.vercel
+
+# Env / secrets (this site needs none — guard anyway)
+.env
+.env.*
+
+# Logs / misc
+*.log
+node_modules/
