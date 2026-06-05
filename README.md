@@ -27,7 +27,7 @@ Scope: `Lens Public Site — Scope v1.0` (June 2026).
   the zero-tracker / zero-PII posture).
 - `.gitignore`
 
-## Before deploy — required substitutions (2)
+## Before deploy — required substitution (1)
 
 1. **Contact alias** — replace the placeholder address in `index.html`
    (appears in both CTAs; search: `CONTACT`):
@@ -38,19 +38,16 @@ Scope: `Lens Public Site — Scope v1.0` (June 2026).
    silently ship as a working address. (Recommended: a branded alias, **not**
    personal Gmail, on a public page.)
 
-2. **Validation quotes** — replace the three `[ PLACEHOLDER … ]` lines in the
-   "Early signal" section (search: `PLACEHOLDER`) with the exact anonymized
-   callouts from investor deck v7.4.4 slide 3. Held as placeholders on
-   purpose — **do not manufacture quotes.** Roles are already in place
-   (managing partner / PE operating partner / ICF-credentialed coach).
+Validation quotes are **done** (v0.3): the "Early signal" section carries the
+three real anonymized callouts from deck v7.4.4 slide 3 (verbatim).
 
 ## Open inputs (owned by Eric)
 
 | Input | Status | Notes |
 |---|---|---|
 | **Domain** | open | Credibility precondition; does **not** block the build. Point a custom domain when chosen; Vercel subdomain first. |
-| **Contact alias** | open | Required substitution #1 above. |
-| **Validation quotes** | open | Required substitution #2 above — drop the three anonymized lines from deck v7.4.4 slide 3. |
+| **Contact alias** | open | The one remaining substitution above. |
+| **Validation quotes** | done (v0.3) | Three real anonymized callouts from deck v7.4.4 slide 3 are in place. |
 
 ## Deploy (Eric — owns Vercel + any credential step)
 
@@ -65,7 +62,7 @@ Scope: `Lens Public Site — Scope v1.0` (June 2026).
 
 Bump the build stamp on every deploy — it appears in two places in
 `index.html`: `<meta name="build">` and the footer (`BUILD …`). Current:
-`2026.06.04-v0.2`.
+`2026.06.04-v0.3`.
 
 ## Out of scope (v0)
 

@@ -3,13 +3,12 @@
   Lens — public credibility page (static, single file).
   Separate surface. Zero PII capture. No link into the live product.
 
-  BEFORE DEPLOY — two required substitutions:
+  BEFORE DEPLOY — one required substitution:
     1. CONTACT alias: replace "hello@lens.invalid" (search: CONTACT) with the
        branded contact alias. The .invalid TLD guarantees the placeholder
        cannot silently ship as a working address.
-    2. VALIDATION quotes: replace the three "[ PLACEHOLDER … ]" lines (search:
-       PLACEHOLDER) with the exact anonymized callouts from deck v7.4.4 slide 3.
-       Held as placeholders on purpose — do not manufacture quotes.
+  (Validation quotes in "Early signal" are real anonymized callouts from deck
+   v7.4.4 slide 3 — verbatim; do not paraphrase.)
 
   Build stamp lives in the footer and in <meta name="build">. Bump it on every deploy.
 -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lens — An AI associate for retained executive search</title>
   <meta name="description" content="Coaching-depth discovery on both sides of a senior hire, captured as a shared object for better hiring conversations." />
-  <meta name="build" content="2026.06.04-v0.2" />
+  <meta name="build" content="2026.06.04-v0.3" />
   <meta name="robots" content="index, follow" />
   <meta property="og:title" content="Lens — An AI associate for retained executive search" />
   <meta property="og:description" content="Coaching-depth discovery on both sides of a senior hire, captured as a shared object for better hiring conversations." />
@@ -242,18 +241,18 @@
         <p class="label" id="val">Early signal</p>
         <p>I've been testing Lens with the people who'd use it and pay for it — retained search partners, PE operating partners, and executive coaches. A few things they've said:</p>
         <div class="callouts">
-          <!-- PLACEHOLDER: replace each quote with the exact anonymized line from deck v7.4.4 slide 3. Do not manufacture quotes. -->
+          <!-- Real anonymized callouts (deck v7.4.4 slide 3). Quotes are verbatim — do not paraphrase. -->
           <figure class="callout">
-            <blockquote class="quote placeholder">[ PLACEHOLDER — exact anonymized line from deck v7.4.4 slide 3 ]</blockquote>
-            <figcaption class="role">Managing partner, global retained search firm</figcaption>
+            <blockquote class="quote">“You're tugging on some threads that are real.”</blockquote>
+            <figcaption class="role">Principal, executive search &amp; PE talent practice</figcaption>
           </figure>
           <figure class="callout">
-            <blockquote class="quote placeholder">[ PLACEHOLDER — exact anonymized line from deck v7.4.4 slide 3 ]</blockquote>
-            <figcaption class="role">PE operating partner</figcaption>
+            <blockquote class="quote">“Right away, this makes me feel better about the candidates I'm looking at.”</blockquote>
+            <figcaption class="role">PE/VC operating partner</figcaption>
           </figure>
           <figure class="callout">
-            <blockquote class="quote placeholder">[ PLACEHOLDER — exact anonymized line from deck v7.4.4 slide 3 ]</blockquote>
-            <figcaption class="role">Executive coach, ICF-credentialed</figcaption>
+            <blockquote class="quote">“Meat on the bones — not just fluff.”</blockquote>
+            <figcaption class="role">ICF-credentialed coach · founding methodology advisor</figcaption>
           </figure>
         </div>
       </section>
@@ -274,7 +273,7 @@
 
     <footer>
       <p class="org">Zelman Labs LLC · Providence, Rhode Island</p>
-      <p class="build">BUILD 2026.06.04-v0.2</p>
+      <p class="build">BUILD 2026.06.04-v0.3</p>
     </footer>
 
   </div>
