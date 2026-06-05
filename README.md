@@ -62,7 +62,7 @@ three real anonymized callouts from deck v7.4.4 slide 3 (verbatim).
 
 Bump the build stamp on every deploy — it appears in two places in
 `index.html`: `<meta name="build">` and the footer (`BUILD …`). Current:
-`2026.06.04-v0.3`.
+`2026.06.05-v0.4`.
 
 ## Out of scope (v0)
 
