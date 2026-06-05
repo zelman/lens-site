@@ -3,10 +3,13 @@
   Lens — public credibility page (static, single file).
   Separate surface. Zero PII capture. No link into the live product.
 
-  BEFORE DEPLOY — one required substitution:
-    Replace the contact address "hello@lens.invalid" below (search: CONTACT)
-    with the branded contact alias. The .invalid TLD guarantees the
-    placeholder cannot silently ship as a working address.
+  BEFORE DEPLOY — two required substitutions:
+    1. CONTACT alias: replace "hello@lens.invalid" (search: CONTACT) with the
+       branded contact alias. The .invalid TLD guarantees the placeholder
+       cannot silently ship as a working address.
+    2. VALIDATION quotes: replace the three "[ PLACEHOLDER … ]" lines (search:
+       PLACEHOLDER) with the exact anonymized callouts from deck v7.4.4 slide 3.
+       Held as placeholders on purpose — do not manufacture quotes.
 
   Build stamp lives in the footer and in <meta name="build">. Bump it on every deploy.
 -->
@@ -15,11 +18,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lens — An AI associate for retained executive search</title>
-  <meta name="description" content="Structured discovery on both sides of a senior hire — a shared object for better conversations, not a hiring verdict." />
-  <meta name="build" content="2026.06.04-v0.1" />
+  <meta name="description" content="Coaching-depth discovery on both sides of a senior hire, captured as a shared object for better hiring conversations." />
+  <meta name="build" content="2026.06.04-v0.2" />
   <meta name="robots" content="index, follow" />
   <meta property="og:title" content="Lens — An AI associate for retained executive search" />
-  <meta property="og:description" content="Structured discovery on both sides of a senior hire — a shared object for better conversations, not a hiring verdict." />
+  <meta property="og:description" content="Coaching-depth discovery on both sides of a senior hire, captured as a shared object for better hiring conversations." />
   <meta property="og:type" content="website" />
   <!-- Inline SVG favicon (data URI) — keeps the page fully self-contained, no external requests. -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFFFFF'/%3E%3Crect x='6' y='6' width='4' height='20' fill='%23D93025'/%3E%3Crect x='6' y='22' width='16' height='4' fill='%231A1A1A'/%3E%3C/svg%3E" />
@@ -32,6 +35,7 @@
       --orange:    #E8590C;
       --hairline:  #EEEEEE;
       --panel:     #F0F0F0;
+      --muted:     #8A8A8A;
       --mono:      "SF Mono", "SFMono-Regular", Menlo, Consolas, monospace;
       --sans:      Arial, Helvetica, "Helvetica Neue", sans-serif;
     }
@@ -57,17 +61,27 @@
       padding: 0 28px;
     }
 
+    /* ---- Shared red label / eyebrow -------------------------------- */
+    .label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin: 0 0 20px;
+    }
+
     /* ---- Hero ------------------------------------------------------- */
     header.hero {
-      padding: 88px 0 56px;
+      padding: 80px 0 56px;
       border-bottom: 1px solid var(--hairline);
     }
 
     .wordmark {
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 700;
       letter-spacing: 0;          /* do NOT wide-track the Lens wordmark */
-      margin: 0 0 40px;
+      margin: 0 0 56px;
     }
 
     h1 {
@@ -82,8 +96,8 @@
     .subhead {
       font-size: clamp(17px, 2.4vw, 20px);
       line-height: 1.5;
-      margin: 0;
-      max-width: 52ch;
+      margin: 0 0 36px;
+      max-width: 54ch;
       color: var(--ink);
     }
 
@@ -93,60 +107,55 @@
       border-bottom: 1px solid var(--hairline);
     }
 
-    .label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin: 0 0 20px;
-    }
-
     section p {
       margin: 0 0 16px;
-      max-width: 60ch;
+      max-width: 62ch;
     }
     section p:last-child { margin-bottom: 0; }
 
-    /* anti-assessment lead line */
-    .lead {
-      font-size: clamp(20px, 3.2vw, 26px);
+    /* ---- How it's different: three lead/body points ---------------- */
+    .point { margin: 0 0 26px; max-width: 62ch; }
+    .point:last-child { margin-bottom: 0; }
+    .point-lead {
+      font-size: 19px;
       font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: -0.01em;
-      margin: 0 0 16px;
-      max-width: 22ch;
+      line-height: 1.3;
+      margin: 0 0 7px;
     }
+    .point-body { margin: 0; }
 
-    /* ---- Validation strip ------------------------------------------ */
+    /* ---- Validation callouts --------------------------------------- */
     .callouts {
-      list-style: none;
       margin: 8px 0 0;
       padding: 0;
       border-top: 1px solid var(--hairline);
     }
-    .callouts li {
-      padding: 16px 0;
+    .callout {
+      margin: 0;
+      padding: 22px 0;
       border-bottom: 1px solid var(--hairline);
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
     }
-    .callouts .tick {
+    .callout .quote {
+      margin: 0 0 10px;
+      font-size: 19px;
+      line-height: 1.4;
+      max-width: 56ch;
+    }
+    .callout .quote.placeholder {
       font-family: var(--mono);
       font-size: 13px;
-      color: var(--green);
-      flex: 0 0 auto;
-      line-height: 1.5;
+      color: var(--muted);
+      font-style: normal;
     }
-    .callouts .role {
-      font-size: 17px;
+    .callout .role {
+      font-size: 13px;
       font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--ink);
     }
+    .callout .role::before { content: "— "; color: var(--red); }
 
-    /* ---- Contact ---------------------------------------------------- */
-    .contact { padding: 56px 0 24px; border-bottom: none; }
-
+    /* ---- CTA -------------------------------------------------------- */
     .cta {
       display: inline-block;
       background: var(--red);
@@ -162,6 +171,7 @@
     .cta:hover { background: var(--orange); }
     .cta:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 
+    .contact { border-bottom: none; }
     .nodata {
       font-family: var(--mono);
       font-size: 13px;
@@ -186,7 +196,8 @@
     a { color: var(--red); }
 
     @media (max-width: 540px) {
-      header.hero { padding: 56px 0 40px; }
+      header.hero { padding: 52px 0 40px; }
+      .wordmark { margin-bottom: 44px; }
       section { padding: 36px 0; }
     }
   </style>
@@ -196,49 +207,74 @@
 
     <header class="hero">
       <p class="wordmark">Lens</p>
+      <p class="label">Executive Search</p>
       <h1>An AI associate for retained executive search.</h1>
-      <p class="subhead">Structured discovery on both sides of a senior hire — a shared object for better conversations, not a hiring verdict.</p>
+      <p class="subhead">Coaching-depth discovery on both sides of a $300K+ hire — captured as a shared object that makes the next conversation sharper, not a score that ends it.</p>
+      <!-- CONTACT: replace hello@lens.invalid with the branded alias before deploy. -->
+      <a class="cta" href="mailto:hello@lens.invalid?subject=Lens%20%E2%80%94%20request%20access">Request access &rarr;</a>
     </header>
 
     <main>
       <section aria-labelledby="what">
-        <p class="label" id="what">What it is</p>
-        <p>I built Lens as an AI associate for retained search. A recruiter authors a role lens through facilitated intake — the deep version of a kickoff conversation — and Lens reads candidates against it.</p>
-        <p>The result isn't a verdict. It's a shared object: something the recruiter, the client, and the candidate can all point at to make the conversation sharper.</p>
+        <p class="label" id="what">What Lens is</p>
+        <p>A wrong senior hire is paid for by the board, the CFO, and the investors — over a two-year arc. Lens exists to surface the misalignment before the offer goes out.</p>
+        <p>It works inside a retained search firm like a sharp new associate. A recruiter authors a role lens through a guided intake — what the seat actually demands, what would derail it, what "great" looks like past the spec. Lens then reads candidates against that lens and shows where they fit, where they don't, and what's worth asking next.</p>
+        <p>The output isn't a verdict. It's a structured starting point for the conversations that decide the hire.</p>
       </section>
 
       <section aria-labelledby="diff">
-        <p class="label" id="diff">How it's different</p>
-        <p class="lead">Constructive identity, not a hiring verdict.</p>
-        <p>Most tools screen people out. Lens is built to draw people out — discovery that surfaces who someone is, rather than a score that ranks them.</p>
+        <p class="label" id="diff">Not an assessment</p>
+        <div class="point">
+          <p class="point-lead">Constructive identity, not a hiring verdict.</p>
+          <p class="point-body">Lens describes a person and a role in enough depth to discuss them well. It doesn't rank, gate, or claim to predict.</p>
+        </div>
+        <div class="point">
+          <p class="point-lead">Discovery, not screening.</p>
+          <p class="point-body">Keyword filters and personality tests compress people into a label. Lens opens the picture up — the way a good search consultant would.</p>
+        </div>
+        <div class="point">
+          <p class="point-lead">A shared object, not a black box.</p>
+          <p class="point-body">Every signal traces to its source. The recruiter stays in the chair; Lens does the legwork.</p>
+        </div>
       </section>
 
       <section aria-labelledby="val">
-        <p class="label" id="val">Validation</p>
-        <p>The direction has been validated in direct conversations with senior operators across executive search:</p>
-        <ul class="callouts">
-          <li><span class="tick">[ ✓ ]</span><span class="role">Managing partner, global retained search firm</span></li>
-          <li><span class="tick">[ ✓ ]</span><span class="role">PE operating partner</span></li>
-          <li><span class="tick">[ ✓ ]</span><span class="role">Executive coach, ICF-credentialed</span></li>
-        </ul>
+        <p class="label" id="val">Early signal</p>
+        <p>I've been testing Lens with the people who'd use it and pay for it — retained search partners, PE operating partners, and executive coaches. A few things they've said:</p>
+        <div class="callouts">
+          <!-- PLACEHOLDER: replace each quote with the exact anonymized line from deck v7.4.4 slide 3. Do not manufacture quotes. -->
+          <figure class="callout">
+            <blockquote class="quote placeholder">[ PLACEHOLDER — exact anonymized line from deck v7.4.4 slide 3 ]</blockquote>
+            <figcaption class="role">Managing partner, global retained search firm</figcaption>
+          </figure>
+          <figure class="callout">
+            <blockquote class="quote placeholder">[ PLACEHOLDER — exact anonymized line from deck v7.4.4 slide 3 ]</blockquote>
+            <figcaption class="role">PE operating partner</figcaption>
+          </figure>
+          <figure class="callout">
+            <blockquote class="quote placeholder">[ PLACEHOLDER — exact anonymized line from deck v7.4.4 slide 3 ]</blockquote>
+            <figcaption class="role">Executive coach, ICF-credentialed</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section aria-labelledby="vision">
-        <p class="label" id="vision">Vision</p>
-        <p>Beyond any single search, I'm building toward a portable layer of professional identity — something a person owns and carries with them, not a profile a platform rents.</p>
+        <p class="label" id="vision">Where this goes</p>
+        <p>A senior career is more than a résumé. Lens is the start of a portable layer of professional identity — owned by the person, recognized across the firms that hire them.</p>
       </section>
 
       <section class="contact" aria-labelledby="contact">
-        <p class="label" id="contact">Contact</p>
+        <p class="label" id="contact">Get in touch</p>
+        <p>Lens is in limited release with a small group of search firms and operators. If that's you, I'd like to talk.</p>
         <!-- CONTACT: replace hello@lens.invalid with the branded alias before deploy. -->
-        <a class="cta" href="mailto:hello@lens.invalid?subject=Lens%20%E2%80%94%20request%20access">Request access</a>
+        <a class="cta" href="mailto:hello@lens.invalid?subject=Lens%20%E2%80%94%20request%20access">Request access &rarr;</a>
         <p class="nodata">This site collects no personal data.</p>
       </section>
     </main>
 
     <footer>
-      <p class="org">Zelman Labs LLC · Providence, RI</p>
-      <p class="build">BUILD 2026.06.04-v0.1</p>
+      <p class="org">Zelman Labs LLC · Providence, Rhode Island</p>
+      <p class="build">BUILD 2026.06.04-v0.2</p>
     </footer>
 
   </div>
