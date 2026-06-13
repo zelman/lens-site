@@ -11,8 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lens — An AI associate for retained executive search</title>
   <meta name="description" content="Coaching-depth discovery on both sides of a senior hire, captured as a shared object for better hiring conversations." />
-  <meta name="build" content="2026.06.12-v0.7" />
+  <meta name="build" content="2026.06.12-v0.8" />
   <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://zelmanlabs.com/" />
   <meta property="og:title" content="Lens — An AI associate for retained executive search" />
   <meta property="og:description" content="Coaching-depth discovery on both sides of a senior hire, captured as a shared object for better hiring conversations." />
   <meta property="og:type" content="website" />
@@ -61,6 +62,10 @@
       text-transform: uppercase;
       color: var(--red);
       margin: 0 0 20px;
+    }
+    .label .num {
+      font-family: var(--mono);
+      font-weight: 400;
     }
 
     /* ---- Hero ------------------------------------------------------- */
@@ -127,20 +132,24 @@
       padding: 22px 0;
       border-bottom: 1px solid var(--hairline);
     }
-    .callout .quote {
-      margin: 0 0 10px;
+    .quote {
+      margin: 0 0 12px;
+      padding-left: 16px;
+      border-left: 2px solid var(--red);
+      border-radius: 0;
+      font-weight: 400;
       font-size: 19px;
       line-height: 1.4;
       max-width: 56ch;
     }
-    .callout .role {
+    .quote-attr {
+      padding-left: 16px;
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--red);
     }
-    .callout .role::before { content: "— "; }
 
     /* ---- CTA -------------------------------------------------------- */
     .cta {
@@ -196,20 +205,21 @@
       <p class="wordmark">Lens</p>
       <p class="label">Executive Search</p>
       <h1>An AI associate for retained executive search.</h1>
-      <p class="subhead">Coaching-depth discovery on both sides of executive hires — captured as a shared object that makes the next conversation sharper, not a score that ends it.</p>
-      <a class="cta" href="mailto:hello@zelmanlabs.com?subject=Lens%20%E2%80%94%20request%20access">Request access &rarr;</a>
+      <p class="subhead">Coaching-depth discovery on both sides of a senior hire — captured as a shared object that makes the next conversation sharper, not a score that ends it.</p>
+      <a class="cta" href="mailto:hello@zelmanlabs.com?subject=Lens%20%E2%80%94%20request%20access&amp;body=Firm%3A%0ARole%3A%0AHow%20I%20found%20Lens%3A%0A">Request access &rarr;</a>
     </header>
 
     <main>
       <section aria-labelledby="what">
-        <p class="label" id="what">What Lens is</p>
+        <h2 class="label" id="what"><span class="num">01</span> — What Lens is</h2>
         <p>A wrong senior hire is paid for by the board, the CFO, and the investors — over a two-year arc. Lens exists to surface the misalignment before the offer goes out.</p>
         <p>It works inside a retained search firm like a sharp new associate. A recruiter authors a role lens through a guided intake — what the seat actually demands, what would derail it, what "great" looks like past the spec. Lens then reads candidates against that lens and shows where they fit, where they don't, and what's worth asking next.</p>
         <p>The output isn't a verdict. It's a structured starting point for the conversations that decide the hire.</p>
+        <p>Built for boutique retained firms placing $300K+ leaders.</p>
       </section>
 
       <section aria-labelledby="diff">
-        <p class="label" id="diff">Not an assessment</p>
+        <h2 class="label" id="diff"><span class="num">02</span> — Not an assessment</h2>
         <div class="point">
           <p class="point-lead">Constructive identity, not a hiring verdict.</p>
           <p class="point-body">Lens describes a person and a role in enough depth to discuss them well. It doesn't rank, gate, or claim to predict.</p>
@@ -225,41 +235,41 @@
       </section>
 
       <section aria-labelledby="val">
-        <p class="label" id="val">Early signal</p>
-        <p>I've been testing Lens with the people who'd use it and pay for it — retained search partners, PE operating partners, and executive coaches. A few things they've said:</p>
+        <h2 class="label" id="val"><span class="num">03</span> — Early signal</h2>
+        <p>The people who'd use it and pay for it — recruiters, candidates, and search leaders — after early sessions:</p>
         <div class="callouts">
           <!-- Quotes are verbatim — do not paraphrase. -->
           <figure class="callout">
-            <blockquote class="quote">“I put in 14, 16 hours a day... trying to figure out if the person’s as good as their resume.”</blockquote>
-            <figcaption class="role">Technical recruiter</figcaption>
+            <blockquote class="quote">I put in 14, 16 hours a day... trying to figure out if the person’s as good as their resume.</blockquote>
+            <figcaption class="quote-attr">Technical recruiter</figcaption>
           </figure>
           <figure class="callout">
-            <blockquote class="quote">“The exact opposite of a resume or cover letter — where you tell the employer what they want to hear.”</blockquote>
-            <figcaption class="role">Executive beta tester</figcaption>
+            <blockquote class="quote">It is the exact opposite of a resume or cover letter — where you tell the employer what they want to hear.</blockquote>
+            <figcaption class="quote-attr">Executive beta tester</figcaption>
           </figure>
           <figure class="callout">
-            <blockquote class="quote">“Executive recruiting would be most interested... these are hires where compensation is well in excess of a million dollars. They should be willing to put in the time.”</blockquote>
-            <figcaption class="role">Retired Partner &amp; Human Capital COO, Global Investment Bank</figcaption>
+            <blockquote class="quote">Executive recruiting would be most interested... these are hires where compensation is well in excess of a million dollars. They should be willing to put in the time.</blockquote>
+            <figcaption class="quote-attr">Retired Partner &amp; Human Capital COO, Global Investment Bank</figcaption>
           </figure>
         </div>
       </section>
 
       <section aria-labelledby="vision">
-        <p class="label" id="vision">Where this goes</p>
+        <h2 class="label" id="vision"><span class="num">04</span> — Where this goes</h2>
         <p>A senior career is more than a résumé. Lens is the start of a portable layer of professional identity — owned by the person, recognized across the firms that hire them.</p>
       </section>
 
       <section class="contact" aria-labelledby="contact">
-        <p class="label" id="contact">Get in touch</p>
+        <h2 class="label" id="contact"><span class="num">05</span> — Get in touch</h2>
         <p>Lens is in limited release with a small group of search firms and operators. If that's you, I'd like to talk.</p>
-          <a class="cta" href="mailto:hello@zelmanlabs.com?subject=Lens%20%E2%80%94%20request%20access">Request access &rarr;</a>
+          <a class="cta" href="mailto:hello@zelmanlabs.com?subject=Lens%20%E2%80%94%20request%20access&amp;body=Firm%3A%0ARole%3A%0AHow%20I%20found%20Lens%3A%0A">Request access &rarr;</a>
         <p class="nodata">This site collects no personal data.</p>
       </section>
     </main>
 
     <footer>
       <p class="org">Zelman Labs LLC · Providence, Rhode Island</p>
-      <p class="build">BUILD 2026.06.12-v0.7</p>
+      <p class="build">BUILD 2026.06.12-v0.8</p>
     </footer>
 
   </div>

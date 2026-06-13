@@ -6,6 +6,9 @@ nothing and links to nothing functional.
 
 Scope: `Lens Public Site — Scope v1.0` (June 2026).
 
+**Status:** live in production at <https://zelmanlabs.com> (apex + `www`, own
+Vercel project). Build `2026.06.12-v0.8`. `git push` to `main` auto-deploys.
+
 ## Hard constraints
 
 1. **Zero PII capture.** No forms, no database, no Airtable, no email widget,
@@ -27,42 +30,44 @@ Scope: `Lens Public Site — Scope v1.0` (June 2026).
   the zero-tracker / zero-PII posture).
 - `.gitignore`
 
-## Before deploy — required substitution (1)
+## Contact alias
 
-1. **Contact alias** — replace the placeholder address in `index.html`
-   (appears in both CTAs; search: `CONTACT`):
+Both CTAs use the branded alias **`hello@zelmanlabs.com`** (the original
+`hello@lens.invalid` placeholder has been removed). The CTAs also prefill the
+draft body (Firm / Role / How I found Lens).
 
-        hello@lens.invalid   →   <branded contact alias>
+> ⚠️ **Forwarding receipt unverified.** A 2026-06-12 test to
+> `hello@zelmanlabs.com` bounced. Confirm mail actually lands in Eric's inbox
+> before relying on the CTA — the address is already live in production.
 
-   The `.invalid` TLD is deliberate — it guarantees the placeholder cannot
-   silently ship as a working address. (Recommended: a branded alias, **not**
-   personal Gmail, on a public page.)
+## Content
 
-Validation quotes are **done** (v0.3): the "Early signal" section carries the
-three real anonymized callouts from deck v7.4.4 slide 3 (verbatim).
+The "Early signal" section carries the locked trio of verbatim beta-tester
+quotes (technical recruiter · executive beta tester · retired partner &
+human-capital COO). No placeholders remain.
 
 ## Open inputs (owned by Eric)
 
 | Input | Status | Notes |
 |---|---|---|
-| **Domain** | open | Credibility precondition; does **not** block the build. Point a custom domain when chosen; Vercel subdomain first. |
-| **Contact alias** | open | The one remaining substitution above. |
-| **Validation quotes** | done (v0.3) | Three real anonymized callouts from deck v7.4.4 slide 3 are in place. |
+| **Domain** | done | Live at `zelmanlabs.com` (apex + `www` on Vercel). |
+| **Contact alias** | done — forwarding unverified | `hello@zelmanlabs.com` in both CTAs; 6/12 forwarding test bounced — verify receipt. |
+| **Validation quotes** | done | Locked trio in place (v0.7 → restyled v0.8). |
 
-## Deploy (Eric — owns Vercel + any credential step)
+## Deploy
 
-1. Substitute the contact alias (above).
-2. Create a **new, separate** Vercel project from this repo (do not reuse the
-   product project). Framework preset: **Other / static**. No build command,
-   no env vars.
-3. Deploy. Vercel serves `index.html` at the root.
-4. Point the custom domain when chosen.
+Push to `main` → Vercel auto-deploys (project: `lens-site`, Lens team).
+Framework preset **Other / static**, no build command, no env vars. Vercel
+serves `index.html` at the root.
+
+DNS: Squarespace-managed (Google Cloud DNS backend) →
+`A @ 216.150.1.1` and `CNAME www aa81152aef73b33f.vercel-dns-016.com`.
 
 ## Versioning
 
 Bump the build stamp on every deploy — it appears in two places in
 `index.html`: `<meta name="build">` and the footer (`BUILD …`). Current:
-`2026.06.05-v0.4`.
+`2026.06.12-v0.8`.
 
 ## Out of scope (v0)
 
