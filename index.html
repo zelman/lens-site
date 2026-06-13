@@ -3,9 +3,6 @@
   Lens — public credibility page (static, single file).
   Separate surface. Zero PII capture. No link into the live product.
 
-  (Validation quotes in "Early signal" are real anonymized callouts from deck
-   v7.4.4 slide 3 — verbatim; do not paraphrase.)
-
   Build stamp lives in the footer and in <meta name="build">. Bump it on every deploy.
 -->
 <html lang="en">
@@ -14,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lens — An AI associate for retained executive search</title>
   <meta name="description" content="Coaching-depth discovery on both sides of a senior hire, captured as a shared object for better hiring conversations." />
-  <meta name="build" content="2026.06.12-v0.5" />
+  <meta name="build" content="2026.06.12-v0.6" />
   <meta name="robots" content="index, follow" />
   <meta property="og:title" content="Lens — An AI associate for retained executive search" />
   <meta property="og:description" content="Coaching-depth discovery on both sides of a senior hire, captured as a shared object for better hiring conversations." />
@@ -119,37 +116,6 @@
     }
     .point-body { margin: 0; }
 
-    /* ---- Validation callouts --------------------------------------- */
-    .callouts {
-      margin: 8px 0 0;
-      padding: 0;
-      border-top: 1px solid var(--hairline);
-    }
-    .callout {
-      margin: 0;
-      padding: 22px 0;
-      border-bottom: 1px solid var(--hairline);
-    }
-    .callout .quote {
-      margin: 0 0 10px;
-      font-size: 19px;
-      line-height: 1.4;
-      max-width: 56ch;
-    }
-    .callout .quote.placeholder {
-      font-family: var(--mono);
-      font-size: 13px;
-      color: var(--muted);
-      font-style: normal;
-    }
-    .callout .role {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      color: var(--ink);
-    }
-    .callout .role::before { content: "— "; color: var(--red); }
-
     /* ---- CTA -------------------------------------------------------- */
     .cta {
       display: inline-block;
@@ -232,26 +198,6 @@
         </div>
       </section>
 
-      <section aria-labelledby="val">
-        <p class="label" id="val">Early signal</p>
-        <p>I've been testing Lens with the people who'd use it and pay for it — retained search partners, PE operating partners, and executive coaches. A few things they've said:</p>
-        <div class="callouts">
-          <!-- Real anonymized callouts (deck v7.4.4 slide 3). Quotes are verbatim — do not paraphrase. -->
-          <figure class="callout">
-            <blockquote class="quote">“You're tugging on some threads that are real.”</blockquote>
-            <figcaption class="role">Principal, executive search &amp; PE talent practice</figcaption>
-          </figure>
-          <figure class="callout">
-            <blockquote class="quote">“Right away, this makes me feel better about the candidates I'm looking at.”</blockquote>
-            <figcaption class="role">PE/VC operating partner</figcaption>
-          </figure>
-          <figure class="callout">
-            <blockquote class="quote">“Meat on the bones — not just fluff.”</blockquote>
-            <figcaption class="role">ICF-credentialed coach · founding methodology advisor</figcaption>
-          </figure>
-        </div>
-      </section>
-
       <section aria-labelledby="vision">
         <p class="label" id="vision">Where this goes</p>
         <p>A senior career is more than a résumé. Lens is the start of a portable layer of professional identity — owned by the person, recognized across the firms that hire them.</p>
@@ -267,7 +213,7 @@
 
     <footer>
       <p class="org">Zelman Labs LLC · Providence, Rhode Island</p>
-      <p class="build">BUILD 2026.06.12-v0.5</p>
+      <p class="build">BUILD 2026.06.12-v0.6</p>
     </footer>
 
   </div>
