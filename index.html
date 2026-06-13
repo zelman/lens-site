@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lens — An AI associate for retained executive search</title>
   <meta name="description" content="Coaching-depth discovery on both sides of a senior hire, captured as a shared object for better hiring conversations." />
-  <meta name="build" content="2026.06.12-v0.6" />
+  <meta name="build" content="2026.06.12-v0.7" />
   <meta name="robots" content="index, follow" />
   <meta property="og:title" content="Lens — An AI associate for retained executive search" />
   <meta property="og:description" content="Coaching-depth discovery on both sides of a senior hire, captured as a shared object for better hiring conversations." />
@@ -116,6 +116,32 @@
     }
     .point-body { margin: 0; }
 
+    /* ---- Validation callouts --------------------------------------- */
+    .callouts {
+      margin: 8px 0 0;
+      padding: 0;
+      border-top: 1px solid var(--hairline);
+    }
+    .callout {
+      margin: 0;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .callout .quote {
+      margin: 0 0 10px;
+      font-size: 19px;
+      line-height: 1.4;
+      max-width: 56ch;
+    }
+    .callout .role {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+    .callout .role::before { content: "— "; }
+
     /* ---- CTA -------------------------------------------------------- */
     .cta {
       display: inline-block;
@@ -198,6 +224,26 @@
         </div>
       </section>
 
+      <section aria-labelledby="val">
+        <p class="label" id="val">Early signal</p>
+        <p>I've been testing Lens with the people who'd use it and pay for it — retained search partners, PE operating partners, and executive coaches. A few things they've said:</p>
+        <div class="callouts">
+          <!-- Quotes are verbatim — do not paraphrase. -->
+          <figure class="callout">
+            <blockquote class="quote">“I put in 14, 16 hours a day... trying to figure out if the person’s as good as their resume.”</blockquote>
+            <figcaption class="role">Technical recruiter</figcaption>
+          </figure>
+          <figure class="callout">
+            <blockquote class="quote">“The exact opposite of a resume or cover letter — where you tell the employer what they want to hear.”</blockquote>
+            <figcaption class="role">Executive beta tester</figcaption>
+          </figure>
+          <figure class="callout">
+            <blockquote class="quote">“Executive recruiting would be most interested... these are hires where compensation is well in excess of a million dollars. They should be willing to put in the time.”</blockquote>
+            <figcaption class="role">Retired Partner &amp; Human Capital COO, Global Investment Bank</figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section aria-labelledby="vision">
         <p class="label" id="vision">Where this goes</p>
         <p>A senior career is more than a résumé. Lens is the start of a portable layer of professional identity — owned by the person, recognized across the firms that hire them.</p>
@@ -213,7 +259,7 @@
 
     <footer>
       <p class="org">Zelman Labs LLC · Providence, Rhode Island</p>
-      <p class="build">BUILD 2026.06.12-v0.6</p>
+      <p class="build">BUILD 2026.06.12-v0.7</p>
     </footer>
 
   </div>
